@@ -1,0 +1,153 @@
+
+clock_small:
+    widget_type: clock
+    date_style: "font-size: 0%;"
+    time_style: "font-size: 350%; font-weight: bold;; color: #ffffff"
+    date_format_country: "us"
+
+clock_lg:
+    widget_type: clock
+    date_style: "font-size: 200%;"
+    time_style: "font-size: 380%; font-weight: bold; color: #ffffff"
+    date_format_country: "us"
+    date_format_options:
+      weekday: "short"
+      day: "numeric"
+      month: "numeric"
+
+
+#########################################################
+#
+#               Navigation 
+#
+#########################################################
+
+nav_home_small:
+    widget_type: navigate
+    dashboard: home
+    title: HOME
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: fa-home
+    icon_inactive: fa-home
+
+nav_home_small_active:
+    widget_type: navigate
+    dashboard: home
+    title: HOME
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: fa-home
+    icon_inactive: fa-home
+
+nav_weather_small:
+    widget_type: navigate
+    dashboard: weather
+    title: WEATHER
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-weather-lightning-rainy  
+    icon_inactive: mdi-weather-lightning-rainy
+
+nav_weather_small_active:
+    widget_type: navigate
+    dashboard: weather
+    title: WEATHER
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-weather-lightning-rainy  
+    icon_inactive: mdi-weather-lightning-rainy
+
+nav_security_small:
+    widget_type: navigate
+    dashboard: security
+    title: Security
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: fa-lock 
+    icon_inactive: fa-lock
+
+nav_security_small_active:
+    widget_type: navigate
+    dashboard: security
+    title: Security
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: fa-lock 
+    icon_inactive: fa-lock
+
+nav_reports_small:
+    widget_type: navigate
+    dashboard: reports
+    title: Temperatures
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 350%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 350%; top: 3px;right: 0;"
+    icon_active: mdi-newspaper
+    icon_inactive: mdi-newspaper
+
+nav_reports_small_active:
+    widget_type: navigate
+    dashboard: reports
+    title: Temperatures
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 350%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 350%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-newspaper
+    icon_inactive: mdi-newspaper
+
+nav_office_small:
+    widget_type: navigate
+    dashboard: office
+    title: Office
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 350%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 350%; top: 3px;right: 0;"
+    icon_active: mdi-tie
+    icon_inactive: mdi-tie
+
+nav_office_small_active:
+    widget_type: navigate
+    dashboard: office
+    title: Office
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 350%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 350%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-tie
+    icon_inactive: mdi-tie
+
+nav_settings_small:
+    widget_type: navigate
+    dashboard: settings
+    title: Settings
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 350%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 350%; top: 3px;right: 0;"
+    icon_active: mdi-settings
+    icon_inactive: mdi-settings
+
+nav_settings_small_active:
+    widget_type: navigate
+    dashboard: settings
+    title: Settings
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 350%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 350%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-settings
+    icon_inactive: mdi-settings
+
+nav_reload_small:
+    widget_type: reload
+    title: RELOAD
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 280%; top: 9px;right: 0;"
+    icon_active_style: "font-size: 280%; top: 9px;right: 0;"
+    icon_active: fa-sync 
+    icon_inactive: fa-sync
+

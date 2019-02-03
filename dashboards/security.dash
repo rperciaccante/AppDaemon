@@ -1,0 +1,297 @@
+# https://appdaemon.readthedocs.io/en/latest/DASHBOARD_CREATION.html#widget-customization
+title: Security
+widget_dimensions: [61, 61]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 14
+global_parameters:
+    use_comma: 0
+    precision: 0
+    namespace: default
+    widget_style: "border-top-left-radius: 30px;border-top-right-radius: 30px;border-bottom-left-radius: 30px;border-bottom-right-radius: 30px"
+    title_style: "font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    title2_style: "font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    state_text_style: "font-size: 110%; text-transform: uppercase; font-weight: bold;"
+
+# Active Page Nav Color: 7FFFD4
+
+layout:
+    - include: appdaemon_secrets
+    - include: shared_presence
+    - include: shared_bottom_navigation
+    - kitchen_security (2x2), tv_room_security (2x2), front_porch_camera (6x4), spacer (2x2), clear_alarm (2x2)
+    - 
+    - laundry_room_security (2x2), dining_room_security (2x2), bob_presence (2x2), amy_presence (2x2)
+    - 
+    - foyer_security (2x2), front_room_security (2x2), garage_camera (6x4), alex_presence (2x2), hannah_presence (2x2)
+    - 
+    - office_security (2x2), garage_security (2x2), jeep_presence (2x2), traverse_presence (2x2)
+    -
+    - nav_home_small (1x1), nav_weather_small (1x1), nav_security_small_active (1x1), spacer (1x1), spacer (1x1), clock_small (4x1), spacer (1x1), nav_office_small (1x1), nav_reports_small (1x1), nav_settings_small (1x1), nav_reload_small (1x1)
+
+#########################################################
+#
+#               Secured Components
+#  These components are in the appdaemon_secrets file
+#  since they contain sensitive information
+#
+#########################################################
+#
+#  front_porch_camera
+#  garage_camera
+
+ 
+
+#########################################################
+#
+#               Alarm Mode 
+#
+#########################################################
+
+alarm_mode:
+    widget_type: input_select
+    title: ALARM MODE
+    title_style: "top: 5px;font-size: 130%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold;"
+    entity:  input_select.alarm_mode
+    selectcontainer_style: "top: 27px;"
+ 
+#########################################################
+#
+#               Doors and Windows 
+#
+#########################################################
+
+office_security:
+  entity: binary_sensor.office_room_alarm
+  title: Office
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear 
+  icons:
+    "on":
+      icon: mdi-tie
+      style: "font-size: 520%; top: 27px; color: #ff0055"
+    "off":
+      icon: mdi-tie
+      style: "font-size: 520%; top: 27px; color: #aaff00"
+
+laundry_room_security:
+  entity: binary_sensor.laundryroom_room_alarm
+  title: Laundry
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear  
+  icons:
+    "on":
+      icon:  mdi-tumble-dryer
+      style: "font-size: 520%; top: 27px; color: #ff0055"
+    "off":
+      icon:  mdi-tumble-dryer
+      style: "font-size: 520%; top: 27px; color: #aaff00"
+
+kitchen_security:
+  entity: binary_sensor.kitchen_room_alarm
+  title: Kitchen
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear 
+  icons:
+    "on":
+      icon:  mdi-food
+      style: "font-size: 520%; top: 27px; color: #ff0055"
+    "off":
+      icon:  mdi-food
+      style: "font-size: 520%; top: 27px; color: #aaff00"
+
+dining_room_security:
+  entity: binary_sensor.diningroom_room_alarm
+  title: Dining
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear
+  icons:
+    "on":
+      icon:  mdi-ceiling-light
+      style: "font-size: 520%; top: 27px; color: #ff0055"
+    "off":
+      icon:  mdi-ceiling-light
+      style: "font-size: 520%; top: 27px; color: #aaff00"
+
+foyer_security:
+  entity: binary_sensor.foyer_room_alarm
+  title: Foyer
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear
+  icons:
+    "on":
+      icon:  mdi-door
+      style: "font-size: 520%; top: 27px; color: #ff0055"
+    "off":
+      icon:  mdi-door
+      style: "font-size: 520%; top: 27px; color: #aaff00"
+
+front_room_security:
+  entity: binary_sensor.familyroom_room_alarm
+  title: Family Rm
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear 
+  icons:
+    "on":
+      icon:  mdi-account-multiple
+      style: "font-size: 600%; top: 22px; color: #ff0055"
+    "off":
+      icon:  mdi-account-multiple
+      style: "font-size: 600%; top: 22px; color: #aaff00"
+
+tv_room_security:
+  entity: binary_sensor.tvroom_room_alarm
+  title: TV Room
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear
+  icons:
+    "on":
+      icon:  fa-tv
+      style: "font-size: 420%; top: 35px; color: #ff0055"
+    "off":
+      icon:  fa-tv
+      style: "font-size: 420%; top: 35px; color: #aaff00"
+
+garage_security:
+  entity: binary_sensor.garage_room_alarm
+  title: Garage
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  state_map:
+    "on": Alarm
+    "off": Clear
+  icons:
+    "on":
+      icon:  mdi-garage
+      style: "font-size: 700%; top: 10px; color: #ff0055"
+    "off":
+      icon:  mdi-garage
+      style: "font-size: 700%; top: 10px; color: #aaff00"
+
+clear_alarm:
+    widget_type: switch
+    title: Clear
+    title2: Alarm
+    state_text: 1
+    icon_on: fa-lightbulb
+    icon_off: fa-lightbulb
+    entity: script.78209789467589870302
+    state_map:
+      "on": "On"
+      "off": "Off"
+
+all_windows:
+    entity:  group.sec_window_status
+    title: Windows
+    title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    state_text: 1
+    widget_type: binary_sensor
+    icon_on: mdi-window-open
+    icon_off: mdi-window-closed
+    icon_style_inactive: "font-size: 500%; top: 29px; color: #aaff00"
+    icon_style_active: "font-size: 500%; top: 29px; color: #ff0055"
+    state_map:
+      "on": Open
+      "off": Closed
+  
+all_garage_doors:
+  entity: group.sec_garage_status
+  title: Garage
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  icons:
+    "open":
+      icon: mdi-garage-open
+      style: "font-size: 700%; top: 10px; color: #ff0055"
+    "closed":
+      icon: mdi-garage
+      style: "font-size: 700%; top: 10px; color: #aaff00"
+ 
+all_doors:
+    entity: group.sec_door_status
+    title: Doors
+    title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    state_text: 1
+    widget_type: binary_sensor
+    icon_on: mdi-door-open
+    icon_off: mdi-door-closed
+    icon_style_inactive: "font-size: 580%; top: 23px; color: #aaff00"
+    icon_style_active: "font-size: 580%; top: 23px; color: #ff0055"
+    state_map:
+      "on": Open
+      "off": Closed
+
+fridge_doors:
+    entity: group.fridge_doors
+    title: Fridge
+    state_text: 1
+    widget_type: binary_sensor
+    icon_on: mdi-door-open
+    icon_off: mdi-door-closed
+    icon_style_inactive: "font-size: 525%; top: 27px; color: #aaff00"
+    icon_style_active: "font-size: 525%; top: 27x; color: #ff0055"
+    state_map:
+      "on": Open
+      "off": Closed
+
+#########################################################
+#
+#               Washer and Dryer
+#
+#########################################################
+
+dryer_status:
+  title: Dryer
+  widget_type: icon
+  entity: sensor.dryer_state
+  state_text: 1
+  icons:
+    "Running":
+      icon: mdi-tumble-dryer
+      style: "font-size: 500%; top: 30px; color: #ff0055"
+    "Idle":
+      icon: mdi-tumble-dryer
+      style: "font-size: 500%; top: 30px; color: #aaff00"
+
+washer_status:
+  title: Washer
+  widget_type: icon
+  entity: sensor.washer_state
+  state_text: 1
+  icons:
+    "Running":
+      icon: mdi-washing-machine
+      style: "font-size: 500%; top: 30px; color: #ff0055"
+    "Idle":
+      icon: mdi-washing-machine
+      style: "font-size: 500%; top: 30px; color: #aaff00"

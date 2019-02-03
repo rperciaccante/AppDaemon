@@ -1,0 +1,46 @@
+#########################################################
+#
+#               Left Navigation
+#
+#########################################################
+
+nav_category_temp:
+    widget_type: navigate
+    dashboard: report_temp_1d
+    title: Temp
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-thermometer
+    icon_inactive: mdi-thermometer
+
+nav_category_temp_active:
+    widget_type: navigate
+    dashboard: report_temp_1d
+    title: Temp
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-thermometer
+    icon_inactive: mdi-thermometer
+
+nav_category_energy:
+    widget_type: navigate
+    dashboard: report_energy_1d
+    title: Temp
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-flash
+    icon_inactive: mdi-flash
+
+nav_category_energy_active:
+    widget_type: navigate
+    dashboard: report_energy_1d
+    title: Temp
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-flash
+    icon_inactive: mdi-flash
+

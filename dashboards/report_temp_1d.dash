@@ -1,0 +1,39 @@
+# https://appdaemon.readthedocs.io/en/latest/DASHBOARD_CREATION.html#widget-customization
+title: Temps - last 1 days
+widget_dimensions: [61, 61]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 14
+global_parameters:
+    use_comma: 0
+    precision: 0
+    namespace: default
+    widget_style: "border-top-left-radius: 30px;border-top-right-radius: 30px;border-bottom-left-radius: 30px;border-bottom-right-radius: 30px"
+
+report_title:
+    widget_type: label
+    title: Temperatures - Last 24 Hours
+    title_style: "font-size: 320%; font-weight: bold; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+
+report_frame:
+    widget_type: iframe
+    title: Temps - Last 1 Days
+    refresh: 300
+    frame_style: ""
+    url_list: 
+    - http://10.2.10.80:3000/d-solo/ohzml__iz/embedded-graphs?orgId=1&panelId=3
+
+layout:
+    - include: shared_left_navigation
+    - include: shared_right_navigation
+    - include: shared_bottom_navigation
+    - report_title (14x1)
+    - nav_category_temp_active (1x1), report_frame (12x7), nav_report_temp_1d_active (1x1)
+    - nav_category_energy (1x1), nav_report_temp_7d (1x1)
+    - spacer, nav_report_temp_30d
+    -
+    -
+    - 
+    -
+    - nav_home_small (1x1), nav_weather_small (1x1), nav_security_small (1x1), spacer (1x1), spacer (1x1), clock_small (4x1), spacer (1x1), nav_office_small (1x1), nav_reports_small_active (1x1), nav_settings_small (1x1), nav_reload_small (1x1)
+

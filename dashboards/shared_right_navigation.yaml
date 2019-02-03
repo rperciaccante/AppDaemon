@@ -1,0 +1,126 @@
+
+#########################################################
+#
+#               Right Navigation
+#
+#########################################################
+
+nav_report_temp_1d:
+    widget_type: navigate
+    dashboard: report_temp_1d
+    title: Last 7 Days
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-calendar-today
+    icon_inactive: mdi-calendar-today
+
+nav_report_temp_1d_active:
+    widget_type: navigate
+    dashboard: report_temp_1d
+    title: Last 7 Days
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-calendar-today
+    icon_inactive: mdi-calendar-today
+
+nav_report_temp_7d:
+    widget_type: navigate
+    dashboard: report_temp_7d
+    title: Last 7 Days
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-calendar-week
+    icon_inactive: mdi-calendar-week
+
+nav_report_temp_7d_active:
+    widget_type: navigate
+    dashboard: report_temp_7d
+    title: Last 7 Days
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-calendar-week
+    icon_inactive: mdi-calendar-week
+
+nav_report_temp_30d:
+    widget_type: navigate
+    dashboard: report_temp_30d
+    title: Last 30 Days
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-calendar-text
+    icon_inactive: mdi-calendar-text
+
+nav_report_temp_30d_active:
+    widget_type: navigate
+    dashboard: report_temp_30d
+    title: Last 30 Days
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-calendar-text
+    icon_inactive: mdi-calendar-text
+
+nav_report_energy_1d:
+    widget_type: navigate
+    dashboard: report_energy_1d
+    title: Energy
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-calendar-today
+    icon_inactive: mdi-calendar-today
+
+nav_report_energy_1d_active:
+    widget_type: navigate
+    dashboard: report_energy_1d
+    title: Energy
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-calendar-today
+    icon_inactive: mdi-calendar-today
+
+nav_report_energy_7d:
+    widget_type: navigate
+    dashboard: report_energy_7d
+    title: Energy
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-calendar-week
+    icon_inactive: mdi-calendar-week
+
+nav_report_energy_7d_active:
+    widget_type: navigate
+    dashboard: report_energy_7d
+    title: Energy
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-calendar-week
+    icon_inactive: mdi-calendar-week
+
+nav_report_energy_30d:
+    widget_type: navigate
+    dashboard: report_energy_30d
+    title: Energy
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0;"
+    icon_active: mdi-calendar-text
+    icon_inactive: mdi-calendar-text
+
+nav_report_energy_30d_active:
+    widget_type: navigate
+    dashboard: report_energy_30d
+    title: Energy
+    title_style: "font-size: 0%"
+    icon_inactive_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active_style: "font-size: 320%; top: 3px;right: 0; color: #aaff00"
+    icon_active: mdi-calendar-text
+    icon_inactive: mdi-calendar-text

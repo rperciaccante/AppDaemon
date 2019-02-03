@@ -1,0 +1,65 @@
+#########################################################
+#
+#               Presence 
+#
+#########################################################
+
+alex_presence:
+    widget_type: device_tracker
+    title: Alex
+    title_style: "top: 5px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: alexsiphone
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+
+amy_presence:
+    widget_type: device_tracker
+    title: Amy
+    title_style: "top: 5px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: amysiphone
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+    
+bob_presence:
+    widget_type: device_tracker
+    title: Bob
+    title_style: "top: 5px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: bobperciaccantenet_bob
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+    
+hannah_presence:
+    widget_type: device_tracker
+    title: Hannah
+    title_style: "top: 5px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: hannahsiphone
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+
+jeep_presence:
+    widget_type: device_tracker
+    title: Jeep
+    title_style: "top: 5px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: jeep_wrangler
+    icon_on: fa-truck-monster
+    icon_off: fa-truck-monster
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+
+traverse_presence:
+    widget_type: device_tracker
+    title: Traverse
+    title_style: "top: 10px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: chevy_traverse
+    icon_on: fa-car-side
+    icon_off: fa-car-side
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"

@@ -1,0 +1,140 @@
+# https://appdaemon.readthedocs.io/en/latest/DASHBOARD_CREATION.html#widget-customization
+title: Settings
+widget_dimensions: [61, 61]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 14
+global_parameters:
+    use_comma: 0
+    precision: 0
+    namespace: default
+    #title_style: "font-size: 150%"
+    widget_style: "border-top-left-radius: 30px;border-top-right-radius: 30px;border-bottom-left-radius: 30px;border-bottom-right-radius: 30px"
+    title_style: "font-size: 120%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    title2_style: "font-size: 120%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+
+
+layout:
+    - include: shared_bottom_navigation
+    - fridge_alarm (7x1), alex_laundry_alarm (7x1)
+    - front_door_alarm (7x1), hannah_laundry_alarm (7x1)
+    - patio_door_alarm (7x1), bob_laundry_alarm (7x1)
+    - spacer (7x1), amy_laundry_alarm (7x1)
+    -
+    -
+    -
+    -
+    - nav_home_small (1x1), nav_weather_small (1x1), nav_security_small (1x1), spacer (1x1), spacer (1x1), clock_small (4x1), spacer (1x1), nav_office_small (1x1), nav_reports_small (1x1), nav_settings_small_active (1x1), nav_reload_small (1x1)
+    
+
+
+#########################################################
+#
+#               Automations
+#
+#########################################################
+
+fridge_alarm:
+    widget_type: switch
+    title: Fridge Door Alert
+    state_text: 1
+    icon_on: mdi-checkbox-marked-circle-outline
+    icon_off: mdi-checkbox-blank-circle-outline
+    entity: automation.notify__fridge_doors_open__new
+    state_map:
+      "on": "On"
+      "off": "Off"
+    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
+    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
+    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    state_text_style: "font-size: 0%;"
+
+patio_door_alarm:
+    widget_type: switch
+    title: Patio Door Alert
+    state_text: 1
+    icon_on: mdi-checkbox-marked-circle-outline
+    icon_off: mdi-checkbox-blank-circle-outline
+    entity: automation.notify__alert_when_back_door_open
+    state_map:
+      "on": "On"
+      "off": "Off"
+    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
+    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
+    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    state_text_style: "font-size: 0%;"
+
+front_door_alarm:
+    widget_type: switch
+    title: Front Door Alert
+    state_text: 1
+    icon_on: mdi-checkbox-marked-circle-outline
+    icon_off: mdi-checkbox-blank-circle-outline
+    entity: automation.notify__alert_when_front_door_open
+    state_map:
+      "on": "On"
+      "off": "Off"
+    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
+    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
+    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    state_text_style: "font-size: 0%;"
+
+alex_laundry_alarm:
+    widget_type: switch
+    title: Alex Laundry Alert
+    state_text: 1
+    icon_on: mdi-checkbox-marked-circle-outline
+    icon_off: mdi-checkbox-blank-circle-outline
+    entity: automation.notify__laundry_sms_alex
+    state_map:
+      "on": "On"
+      "off": "Off"
+    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
+    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
+    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    state_text_style: "font-size: 0%;"
+
+hannah_laundry_alarm:
+    widget_type: switch
+    title: Hannah Laundry Alert
+    state_text: 1
+    icon_on: mdi-checkbox-marked-circle-outline
+    icon_off: mdi-checkbox-blank-circle-outline
+    entity: automation.notify__laundry_sms_hannah
+    state_map:
+      "on": "On"
+      "off": "Off"
+    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
+    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
+    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    state_text_style: "font-size: 0%;"
+
+bob_laundry_alarm:
+    widget_type: switch
+    title: Bob Laundry Alert
+    state_text: 1
+    icon_on: mdi-checkbox-marked-circle-outline
+    icon_off: mdi-checkbox-blank-circle-outline
+    entity: automation.notify__laundry_sms_bob
+    state_map:
+      "on": "On"
+      "off": "Off"
+    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
+    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
+    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    state_text_style: "font-size: 0%;"
+
+amy_laundry_alarm:
+    widget_type: switch
+    title: Amy Laundry Alert
+    state_text: 1
+    icon_on: mdi-checkbox-marked-circle-outline
+    icon_off: mdi-checkbox-blank-circle-outline
+    entity: automation.notify__laundry_sms_amy
+    state_map:
+      "on": "On"
+      "off": "Off"
+    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
+    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
+    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    state_text_style: "font-size: 0%;"
