@@ -1,0 +1,221 @@
+# https://appdaemon.readthedocs.io/en/latest/DASHBOARD_CREATION.html#widget-customization
+title: HOME
+widget_dimensions: [61, 61]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 14
+global_parameters:
+    use_comma: 0
+    precision: 0
+    namespace: default
+    widget_style: "border-top-left-radius: 30px;border-top-right-radius: 30px;border-bottom-left-radius: 30px;border-bottom-right-radius: 30px"
+    title_style: "font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    title2_style: "font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    state_text_style: "font-size: 110%; text-transform: uppercase; font-weight: bold;"
+
+# Active Page Nav Color: 7FFFD4
+
+clock_lg:
+    widget_type: clock
+    date_style: "font-size: 200%;"
+    time_style: "font-size: 380%; font-weight: bold;; color: #ffffff"
+    date_format_country: "us"
+    date_format_options:
+      weekday: "short"
+      day: "numeric"
+      month: "numeric"
+
+layout:
+    - include: shared_bottom_navigation
+    - clock_lg (4x2), all_windows (2x2), all_garage_doors (2x2), all_doors (2x2), outside_temp (4x4) #weather (4x4) 
+    -
+    - jeep_presence (2x2), bob_presence (2x2), amy_presence (2x2), alex_presence (2x2), hannah_presence (2x2)
+    -
+    - traverse_presence (2x2),  spacer (2x2), washer_status (2x2), dryer_status(2x2), fridge_doors(2x2)
+    -
+    - 
+    - 
+    - nav_home_small_active (1x1), nav_weather_small (1x1), nav_security_small (1x1), spacer (1x1), spacer (1x1), clock_small (4x1), spacer (1x1), nav_office_small (1x1), nav_reports_small (1x1), nav_settings_small (1x1), nav_reload_small (1x1)
+
+
+
+
+
+#########################################################
+#
+#               Presence 
+#
+#########################################################
+
+alex_presence:
+    widget_type: device_tracker
+    title: Alex
+    title_style: "top: 5px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: alexsiphone
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+
+amy_presence:
+    widget_type: device_tracker
+    title: Amy
+    device: amysiphone
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+    
+bob_presence:
+    widget_type: device_tracker
+    title: Bob
+    device: bobperciaccantenet_bob
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+    
+hannah_presence:
+    widget_type: device_tracker
+    title: Hannah
+    device: hannahsiphone
+    icon_on: fa-user-check
+    icon_off: fa-user-times
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+
+jeep_presence:
+    widget_type: device_tracker
+    title: Jeep
+    device: jeep_wrangler
+    icon_on: fa-truck-monster
+    icon_off: fa-truck-monster
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+
+traverse_presence:
+    widget_type: device_tracker
+    title: Traverse
+    title_style: "top: 10px;font-size: 175%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    device: chevy_traverse
+    icon_on: fa-car-side
+    icon_off: fa-car-side
+    icon_style_active: "font-size: 450%; top: 35px; color: #aaff00"
+    icon_style_inactive: "font-size: 450%; top: 35px; color: #ff0055"
+
+#########################################################
+#
+#               Weather and Time 
+#
+#########################################################
+
+outside_temp:
+    widget_type: sensor
+    title: Outside 
+    title_style: "top: 20px; font-size: 250%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    title2: Temperature
+    title2_style: "top: 60px; font-size: 250%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    units: "&deg;F"
+    value_style: "margin-top: 70px; font-size: 800%; font-weight: bold;"
+    unit_style: "margin-top: 70px; font-size: 200%; font-weight: bold;"
+    entity: sensor.dark_sky_temperature
+
+# https://appdaemon.readthedocs.io/en/latest/DASHBOARD_CREATION.html#weather
+weather:
+    widget_type: weather
+    units: "&deg;F"
+
+
+#########################################################
+#
+#               Doors and Windows 
+#
+#########################################################
+
+all_windows:
+    entity:  group.sec_window_status
+    title: Windows
+    title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    state_text: 1
+    widget_type: binary_sensor
+    icon_on: mdi-window-open
+    icon_off: mdi-window-closed
+    icon_style_inactive: "font-size: 500%; top: 29px; color: #aaff00"
+    icon_style_active: "font-size: 500%; top: 29px; color: #ff0055"
+    state_map:
+      "on": Open
+      "off": Closed
+  
+all_garage_doors:
+  entity: group.sec_garage_status
+  title: Garage
+  title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+  widget_type: icon
+  state_text: 1
+  icons:
+    "open":
+      icon: mdi-garage-open
+      style: "font-size: 700%; top: 10px; color: #ff0055"
+    "closed":
+      icon: mdi-garage
+      style: "font-size: 700%; top: 10px; color: #aaff00"
+ 
+all_doors:
+    entity: group.door_status
+    title: Doors
+    title_style: "top: 10px; text-transform: uppercase; font-weight: bold; font-size: 140%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
+    state_text: 1
+    widget_type: binary_sensor
+    icon_on: mdi-door-open
+    icon_off: mdi-door-closed
+    icon_style_inactive: "font-size: 580%; top: 23px; color: #aaff00"
+    icon_style_active: "font-size: 580%; top: 23px; color: #ff0055"
+    state_map:
+      "on": Open
+      "off": Closed
+
+fridge_doors:
+    entity: group.kitchen_fridge_doors
+    title: Fridge
+    state_text: 1
+    widget_type: binary_sensor
+    icon_on: mdi-door-open
+    icon_off: mdi-door-closed
+    icon_style_inactive: "font-size: 525%; top: 27px; color: #aaff00"
+    icon_style_active: "font-size: 525%; top: 27x; color: #ff0055"
+    state_map:
+      "on": Open
+      "off": Closed
+
+#########################################################
+#
+#               Washer and Dryer
+#
+#########################################################
+
+dryer_status:
+  title: Dryer
+  widget_type: icon
+  entity: sensor.sonoffs3103_device_state
+  state_text: 1
+  icons:
+    "Drying":
+      icon: mdi-tumble-dryer
+      style: "font-size: 500%; top: 30px; color: #ff0055"
+    "Idle":
+      icon: mdi-tumble-dryer
+      style: "font-size: 500%; top: 30px; color: #aaff00"
+
+washer_status:
+  title: Washer
+  widget_type: icon
+  entity: sensor.sonoffs3102_device_state
+  state_text: 1
+  icons:
+    "Washing":
+      icon: mdi-washing-machine
+      style: "font-size: 500%; top: 30px; color: #ff0055"
+    "Idle":
+      icon: mdi-washing-machine
+      style: "font-size: 500%; top: 30px; color: #aaff00"
+
