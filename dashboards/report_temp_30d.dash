@@ -21,7 +21,7 @@ report_frame:
     refresh: 300
     frame_style: ""
     url_list: 
-    - http://10.2.10.80:3000/d-solo/ohzml__iz/embedded-last-24hrs?orgId=1&from=1546572905928&to=1549164905928&panelId=4
+    - http://10.2.10.80:3000/d-solo/ohzml__iz/embedded-graphs?orgId=1&panelId=4
 
 
 layout:

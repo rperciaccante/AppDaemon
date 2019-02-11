@@ -10,31 +10,28 @@ global_parameters:
     namespace: default
     #title_style: "font-size: 150%"
     widget_style: "border-top-left-radius: 30px;border-top-right-radius: 30px;border-bottom-left-radius: 30px;border-bottom-right-radius: 30px"
-    title_style: "font-size: 120%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
-    title2_style: "font-size: 120%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white"
-
 
 layout:
     - include: shared_bottom_navigation
-    - fridge_alarm (7x1), alex_laundry_alarm (7x1)
-    - front_door_alarm (7x1), hannah_laundry_alarm (7x1)
-    - patio_door_alarm (7x1), bob_laundry_alarm (7x1)
-    - spacer (7x1), amy_laundry_alarm (7x1)
+    - alex_laundry_alarm (5x1), kitchen_fridge_alert (5x1), kitchen_fridge_alert_volume (4x1)
+    - hannah_laundry_alarm (5x1), foyer_door_alert (5x1), foyer_door_alert_volume (4x1)
+    - bob_laundry_alarm (5x1), kitchen_patio_door_alert (5x1), kitchen_patio_door_alert_volume (4x1)
+    - amy_laundry_alarm (5x1)
     -
     -
     -
     -
     - nav_home_small (1x1), nav_weather_small (1x1), nav_security_small (1x1), spacer (1x1), spacer (1x1), clock_small (4x1), spacer (1x1), nav_office_small (1x1), nav_reports_small (1x1), nav_settings_small_active (1x1), nav_reload_small (1x1)
     
-
-
+#, kitchen_fridge_alert_volume (4x1)
+#, foyer_door_alert_volume (4x1)
 #########################################################
 #
 #               Automations
 #
 #########################################################
 
-fridge_alarm:
+kitchen_fridge_alert:
     widget_type: switch
     title: Fridge Door Alert
     state_text: 1
@@ -44,12 +41,19 @@ fridge_alarm:
     state_map:
       "on": "On"
       "off": "Off"
-    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
-    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
-    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    icon_style_active: "left:125px; font-size: 370%; top: 2px;"
+    icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
+    title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"
 
-patio_door_alarm:
+kitchen_fridge_alert_volume:
+    widget_type: input_select
+    title: Fridge Door Alert Vol.
+    entity: input_select.kitchen_fridge_alert_volume
+    title_style: "top: 2px; font-size: 100%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    selectcontainer_style: "top: 21px; align: middle"
+
+kitchen_patio_door_alert:
     widget_type: switch
     title: Patio Door Alert
     state_text: 1
@@ -59,12 +63,19 @@ patio_door_alarm:
     state_map:
       "on": "On"
       "off": "Off"
-    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
-    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
-    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    icon_style_active: "left:125px; font-size: 370%; top: 2px;"
+    icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
+    title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"
 
-front_door_alarm:
+kitchen_patio_door_alert_volume:
+    widget_type: input_select
+    title: Patio Door Alert Vol.
+    entity: input_select.kitchen_patio_alert_volume
+    title_style: "top: 2px; font-size: 100%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    selectcontainer_style: "top: 21px; align: middle"
+
+foyer_door_alert:
     widget_type: switch
     title: Front Door Alert
     state_text: 1
@@ -74,10 +85,18 @@ front_door_alarm:
     state_map:
       "on": "On"
       "off": "Off"
-    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
-    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
-    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    icon_style_active: "left:125px; font-size: 370%; top: 2px;"
+    icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
+    title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"
+
+foyer_door_alert_volume:
+    widget_type: input_select
+    title: Front Door Alert Vol.
+    entity: input_select.foyer_door_alert_volume
+    title_style: "top: 2px; font-size: 100%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    selectcontainer_style: "top: 21px; align: middle"
+    selectcontainer_style: "top: 21px; align: middle"
 
 alex_laundry_alarm:
     widget_type: switch
@@ -89,14 +108,14 @@ alex_laundry_alarm:
     state_map:
       "on": "On"
       "off": "Off"
-    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
-    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
-    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    icon_style_active: "left:125px; font-size: 370%; top: 2px;"
+    icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
+    title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"
 
 hannah_laundry_alarm:
     widget_type: switch
-    title: Hannah Laundry Alert
+    title: Han Laundry Alert
     state_text: 1
     icon_on: mdi-checkbox-marked-circle-outline
     icon_off: mdi-checkbox-blank-circle-outline
@@ -104,9 +123,9 @@ hannah_laundry_alarm:
     state_map:
       "on": "On"
       "off": "Off"
-    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
-    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
-    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    icon_style_active: "left:125px; font-size: 370%; top: 2px;"
+    icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
+    title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"
 
 bob_laundry_alarm:
@@ -115,13 +134,13 @@ bob_laundry_alarm:
     state_text: 1
     icon_on: mdi-checkbox-marked-circle-outline
     icon_off: mdi-checkbox-blank-circle-outline
-    entity: automation.notify__laundry_sms_bob
+    entity: automation.notify__laundry_telegraph_bob
     state_map:
       "on": "On"
       "off": "Off"
-    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
-    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
-    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    icon_style_active: "left:125px; font-size: 370%; top: 2px;"
+    icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
+    title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"
 
 amy_laundry_alarm:
@@ -134,7 +153,7 @@ amy_laundry_alarm:
     state_map:
       "on": "On"
       "off": "Off"
-    icon_style_active: "left:194px; font-size: 370%; top: 0px;"
-    icon_style_inactive: "left:194px; font-size: 370%; top: 0px;"
-    title_style: "align: left; right: 20px; top: 20px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
+    icon_style_active: "left:125px; font-size: 370%; top: 2px;"
+    icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
+    title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"

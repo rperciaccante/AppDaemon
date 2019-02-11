@@ -21,7 +21,7 @@ report_frame:
     refresh: 300
     frame_style: ""
     url_list: 
-    - http://10.2.10.80:3000/d-solo/PyLNq__mz/embedded-last-7days?orgId=1&refresh=10s&from=1548542625246&to=1549147425246&panelId=3
+    - http://10.2.10.80:3000/d-solo/ohzml__iz/embedded-graphs?orgId=1&panelId=10
 
 layout:
     - include: shared_left_navigation
