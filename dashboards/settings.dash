@@ -1,4 +1,4 @@
-# https://appdaemon.readthedocs.io/en/latest/DASHBOARD_CREATION.html#widget-customization
+
 title: Settings
 widget_dimensions: [61, 61]
 widget_size: [1, 1]
@@ -6,7 +6,7 @@ widget_margins: [5, 5]
 columns: 14
 global_parameters:
     use_comma: 0
-    precision: 0
+    precision: 1
     namespace: default
     #title_style: "font-size: 150%"
     widget_style: "border-top-left-radius: 30px;border-top-right-radius: 30px;border-bottom-left-radius: 30px;border-bottom-right-radius: 30px"
@@ -25,6 +25,7 @@ layout:
     
 #, kitchen_fridge_alert_volume (4x1)
 #, foyer_door_alert_volume (4x1)
+
 #########################################################
 #
 #               Automations
@@ -45,13 +46,25 @@ kitchen_fridge_alert:
     icon_style_inactive: "left:125px; font-size: 370%; top: 2px;"
     title_style: "align: left; right: 20px; top: 22px; font-size: 125%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
     state_text_style: "font-size: 0%;"
+    
+
+#########################################################
 
 kitchen_fridge_alert_volume:
-    widget_type: input_select
+    widget_type: input_number
     title: Fridge Door Alert Vol.
-    entity: input_select.kitchen_fridge_alert_volume
+    precision: 0
+    units: '%'
+    entity: input_number.kitchen_fridge_alert_volume
     title_style: "top: 2px; font-size: 100%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
-    selectcontainer_style: "top: 21px; align: middle"
+    slider_style: "top: 23px;font-size: 180%"
+    slidercontainer_style: "top: 23px"
+    value_style: "font-size: 0%;"
+    minvalue_style: "font-size: 0%;"
+    maxvalue_style: "font-size: 0%;"
+
+
+#########################################################
 
 kitchen_patio_door_alert:
     widget_type: switch
@@ -69,11 +82,17 @@ kitchen_patio_door_alert:
     state_text_style: "font-size: 0%;"
 
 kitchen_patio_door_alert_volume:
-    widget_type: input_select
+    widget_type: input_number    
+    precision: 0
+    units: '%'
+    entity: input_number.kitchen_patio_alert_volume
     title: Patio Door Alert Vol.
-    entity: input_select.kitchen_patio_alert_volume
     title_style: "top: 2px; font-size: 100%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
-    selectcontainer_style: "top: 21px; align: middle"
+    slider_style: "top: 23px;font-size: 180%"
+    slidercontainer_style: "top: 23px"
+    value_style: "font-size: 0%;"
+    minvalue_style: "font-size: 0%;"
+    maxvalue_style: "font-size: 0%;"
 
 foyer_door_alert:
     widget_type: switch
@@ -91,12 +110,17 @@ foyer_door_alert:
     state_text_style: "font-size: 0%;"
 
 foyer_door_alert_volume:
-    widget_type: input_select
+    widget_type: input_number
+    precision: 0
+    units: '%'
     title: Front Door Alert Vol.
-    entity: input_select.foyer_door_alert_volume
+    entity: input_number.foyer_door_alert_volume
     title_style: "top: 2px; font-size: 100%; text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px white; font-weight: bold; text-transform: uppercase;"
-    selectcontainer_style: "top: 21px; align: middle"
-    selectcontainer_style: "top: 21px; align: middle"
+    slider_style: "top: 23px;font-size: 180%"
+    slidercontainer_style: "top: 23px"
+    value_style: "font-size: 0%;"
+    minvalue_style: "font-size: 0%;"
+    maxvalue_style: "font-size: 0%;"
 
 alex_laundry_alarm:
     widget_type: switch
